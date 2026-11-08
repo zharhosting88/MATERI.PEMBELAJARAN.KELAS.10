@@ -1,0 +1,1145 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0d6efd">
+
+<title>Hindu-Buddha Nusantara | Interactive Presentation</title>
+<meta name="description" content="Presentasi interaktif sejarah masuk dan berkembangnya agama Hindu-Buddha di Nusantara.">
+<meta name="keywords" content="Hindu Buddha, sejarah Indonesia, kerajaan Nusantara, Sriwijaya, Majapahit">
+<meta name="author" content="ZharWeb">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hindu-Buddha di Nusantara">
+<meta property="og:description" content="Jelajahi sejarah masuk dan berkembangnya Hindu-Buddha di Nusantara melalui presentasi interaktif.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=1200">
+<meta property="og:site_name" content="ZharWeb Presentation">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230d6efd'/%3E%3Ctext x='50' y='67' font-size='58' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'%3EH%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+  --blue:#1264e8;
+  --blue2:#3988ff;
+  --dark:#102b52;
+  --text:#172b4d;
+  --muted:#718096;
+  --bg:#f3f7ff;
+  --white:#fff;
+  --border:#e5edfa;
+  --shadow:0 15px 45px rgba(24,76,150,.10);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body {
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+button {
+  font-family:inherit;
+  cursor:pointer;
+}
+
+.topbar {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:68px;
+  padding:0 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+  z-index:100;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:800;
+  color:var(--dark);
+  font-size:15px;
+}
+
+.brand-icon {
+  width:38px;
+  height:38px;
+  display:grid;
+  place-items:center;
+  color:white;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--blue),#70aaff);
+}
+
+.brand small {
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:500;
+  margin-top:3px;
+}
+
+.top-right {
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.status {
+  color:#16835b;
+  background:#e9f9f2;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:11px;
+  font-weight:700;
+}
+
+.menu-btn {
+  width:38px;
+  height:38px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  background:white;
+  color:var(--dark);
+}
+
+.progress-track {
+  position:fixed;
+  top:68px;
+  left:0;
+  width:100%;
+  height:4px;
+  background:#e3ecfb;
+  z-index:101;
+}
+
+.progress-fill {
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,var(--blue),#68a8ff);
+  transition:width .4s;
+}
+
+main {
+  padding:105px 7% 110px;
+  min-height:100vh;
+  max-width:1450px;
+  margin:auto;
+}
+
+.slide {
+  display:none;
+  animation:appear .5s ease;
+}
+
+.slide.active {
+  display:block;
+}
+
+@keyframes appear {
+  from {opacity:0;transform:translateY(15px)}
+  to {opacity:1;transform:translateY(0)}
+}
+
+.eyebrow {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border-radius:30px;
+  background:#e7f0ff;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.5px;
+  margin-bottom:20px;
+}
+
+.hero {
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  align-items:center;
+  gap:45px;
+  min-height:490px;
+}
+
+.hero h1 {
+  font-size:clamp(38px,5.5vw,68px);
+  line-height:1.1;
+  letter-spacing:-2.8px;
+  color:var(--dark);
+  margin-bottom:22px;
+}
+
+.hero h1 span {
+  color:var(--blue);
+}
+
+.hero p {
+  max-width:540px;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.9;
+  margin-bottom:28px;
+}
+
+.primary-btn {
+  border:0;
+  background:linear-gradient(120deg,var(--blue),#3988ff);
+  color:white;
+  padding:14px 22px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:0 8px 20px #1264e833;
+  transition:.2s;
+}
+
+.primary-btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 12px 25px #1264e844;
+}
+
+.secondary-btn {
+  border:1px solid var(--border);
+  background:white;
+  color:var(--dark);
+  padding:14px 20px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.hero-buttons {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.hero-image {
+  position:relative;
+  min-height:390px;
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:#dceaff;
+}
+
+.hero-image img {
+  width:100%;
+  height:390px;
+  object-fit:cover;
+  display:block;
+}
+
+.image-label {
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  right:20px;
+  padding:17px;
+  border-radius:15px;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+}
+
+.image-label strong {
+  display:block;
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+.image-label span {
+  font-size:11px;
+  color:var(--muted);
+}
+
+.section-head {
+  margin-bottom:32px;
+}
+
+.section-head h2 {
+  font-size:clamp(28px,4vw,40px);
+  letter-spacing:-1.5px;
+  color:var(--dark);
+  margin-bottom:12px;
+}
+
+.section-head p {
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.8;
+  max-width:700px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card {
+  padding:25px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(24,76,150,.04);
+  transition:.25s;
+  cursor:pointer;
+}
+
+.card:hover {
+  transform:translateY(-6px);
+  border-color:#a8caff;
+  box-shadow:var(--shadow);
+}
+
+.card-icon {
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:#eaf2ff;
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-size:19px;
+  margin-bottom:20px;
+}
+
+.card h3 {
+  color:var(--dark);
+  font-size:16px;
+  margin-bottom:10px;
+}
+
+.card p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.8;
+}
+
+.card-more {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  display:inline-block;
+  margin-top:18px;
+}
+
+.content-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  align-items:center;
+}
+
+.info-box {
+  padding:30px;
+  border-radius:22px;
+  background:white;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+}
+
+.info-box h3 {
+  font-size:19px;
+  margin-bottom:15px;
+  color:var(--dark);
+}
+
+.info-box p {
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
+}
+
+.info-list {
+  margin-top:20px;
+  display:grid;
+  gap:14px;
+}
+
+.info-item {
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  font-size:13px;
+  line-height:1.7;
+}
+
+.info-item i {
+  color:var(--blue);
+  margin-top:3px;
+}
+
+.visual-box {
+  min-height:310px;
+  border-radius:22px;
+  overflow:hidden;
+  background:#e0edff;
+}
+
+.visual-box img {
+  width:100%;
+  height:100%;
+  min-height:310px;
+  object-fit:cover;
+  display:block;
+}
+
+.timeline {
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:35px;
+}
+
+.timeline::before {
+  content:"";
+  position:absolute;
+  top:19px;
+  left:8%;
+  right:8%;
+  height:3px;
+  background:#c8ddff;
+}
+
+.time-item {
+  position:relative;
+  padding-top:55px;
+}
+
+.time-dot {
+  position:absolute;
+  top:8px;
+  left:15px;
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--blue);
+  border:6px solid #dceaff;
+  z-index:2;
+}
+
+.time-card {
+  background:white;
+  padding:20px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  height:100%;
+}
+
+.time-card strong {
+  color:var(--blue);
+  font-size:12px;
+}
+
+.time-card h3 {
+  margin:10px 0;
+  font-size:15px;
+}
+
+.time-card p {
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.8;
+}
+
+.kingdom-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:17px;
+}
+
+.kingdom {
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  display:flex;
+  gap:17px;
+  align-items:flex-start;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.kingdom:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--shadow);
+}
+
+.kingdom-icon {
+  width:45px;
+  height:45px;
+  border-radius:13px;
+  flex-shrink:0;
+  background:#eaf2ff;
+  color:var(--blue);
+  display:grid;
+  place-items:center;
+  font-size:18px;
+}
+
+.kingdom h3 {
+  font-size:15px;
+  margin-bottom:7px;
+}
+
+.kingdom p {
+  font-size:11px;
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.quote-box {
+  background:linear-gradient(130deg,#105bd3,#438fff);
+  color:white;
+  border-radius:25px;
+  padding:40px;
+  margin-top:30px;
+}
+
+.quote-box h3 {
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+.quote-box p {
+  font-size:13px;
+  line-height:1.9;
+  color:#e7f0ff;
+}
+
+.conclusion {
+  text-align:center;
+  padding:45px 20px;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.conclusion-icon {
+  width:75px;
+  height:75px;
+  display:grid;
+  place-items:center;
+  border-radius:23px;
+  margin:0 auto 22px;
+  background:#eaf2ff;
+  color:var(--blue);
+  font-size:30px;
+}
+
+.conclusion h2 {
+  font-size:30px;
+  color:var(--dark);
+  margin-bottom:15px;
+}
+
+.conclusion p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+  max-width:650px;
+  margin:auto;
+}
+
+.conclusion .primary-btn {
+  margin-top:25px;
+}
+
+.bottom-nav {
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:15px 6%;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(15px);
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:100;
+}
+
+.nav-info {
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+}
+
+.nav-info strong {
+  color:var(--blue);
+}
+
+.nav-buttons {
+  display:flex;
+  gap:10px;
+}
+
+.nav-btn {
+  padding:11px 17px;
+  border:1px solid var(--border);
+  background:white;
+  color:var(--dark);
+  border-radius:10px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.nav-btn.next {
+  background:var(--blue);
+  color:white;
+  border-color:var(--blue);
+}
+
+.nav-btn:disabled {
+  opacity:.4;
+  cursor:not-allowed;
+}
+
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(8,27,58,.65);
+  backdrop-filter:blur(5px);
+  z-index:300;
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.modal.show {
+  display:flex;
+}
+
+.modal-content {
+  background:white;
+  width:100%;
+  max-width:480px;
+  border-radius:22px;
+  padding:30px;
+  animation:appear .3s ease;
+  position:relative;
+}
+
+.modal-close {
+  position:absolute;
+  right:18px;
+  top:18px;
+  width:35px;
+  height:35px;
+  border:0;
+  background:#edf3ff;
+  color:var(--dark);
+  border-radius:10px;
+}
+
+.modal-content h3 {
+  font-size:21px;
+  color:var(--dark);
+  margin:12px 0;
+}
+
+.modal-content p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+}
+
+.modal-tag {
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+}
+
+@media(max-width:850px) {
+  main {padding:100px 5% 110px}
+  .hero {grid-template-columns:1fr;gap:25px}
+  .hero-image {min-height:280px}
+  .hero-image img {height:280px}
+  .cards {grid-template-columns:repeat(2,1fr)}
+  .timeline {grid-template-columns:repeat(2,1fr)}
+  .timeline::before {display:none}
+}
+
+@media(max-width:550px) {
+  .topbar {padding:0 4%}
+  .status {display:none}
+  main {padding:95px 18px 110px}
+  .hero {min-height:auto}
+  .hero h1 {font-size:43px;letter-spacing:-2px}
+  .hero p {font-size:13px}
+  .cards,.kingdom-grid,.content-grid {grid-template-columns:1fr}
+  .timeline {grid-template-columns:1fr}
+  .time-item {padding-top:0;padding-left:35px}
+  .time-dot {top:18px;left:0}
+  .quote-box {padding:25px}
+  .quote-box h3 {font-size:19px}
+  .bottom-nav {padding:12px 15px}
+  .nav-btn {padding:10px 13px;font-size:11px}
+  .nav-info {font-size:10px}
+  .modal-content {padding:25px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-icon"><i class="fa-solid fa-landmark"></i></div>
+    <div>
+      HISTORY SPACE
+      <small>Interactive Learning Presentation</small>
+    </div>
+  </div>
+  <div class="top-right">
+    <span class="status"><i class="fa-solid fa-circle-check"></i> Learning Mode</span>
+    <button class="menu-btn" onclick="toggleFullscreen()" title="Fullscreen">
+      <i class="fa-solid fa-expand"></i>
+    </button>
+  </div>
+</header>
+
+<div class="progress-track">
+  <div class="progress-fill" id="progress"></div>
+</div>
+
+<main>
+
+<!-- SLIDE 1 -->
+<section class="slide active">
+  <div class="hero">
+    <div>
+      <div class="eyebrow"><i class="fa-solid fa-book-open"></i> SEJARAH NUSANTARA</div>
+      <h1>Hindu-Buddha <span>di Nusantara.</span></h1>
+      <p>
+        Menelusuri perjalanan masuknya pengaruh Hindu-Buddha,
+        perkembangan kerajaan, serta warisan kebudayaan yang
+        membentuk sejarah Indonesia.
+      </p>
+      <div class="hero-buttons">
+        <button class="primary-btn" onclick="goTo(1)">
+          Mulai Presentasi <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="secondary-btn" onclick="goTo(5)">
+          Lihat Kesimpulan
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://i.imgur.com/QPzRUM5.jpeg" alt="Candi dan arsitektur sejarah">
+      <div class="image-label">
+        <strong>Warisan Sejarah Nusantara</strong>
+        <span>Perjalanan budaya dan peradaban masa lampau</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide">
+  <div class="section-head">
+    <div class="eyebrow"><i class="fa-solid fa-compass"></i> BAGIAN 01</div>
+    <h2>Awal Masuknya Hindu-Buddha</h2>
+    <p>
+      Pengaruh Hindu-Buddha masuk ke Nusantara melalui hubungan
+      masyarakat dengan wilayah Asia Selatan dan Asia Tenggara.
+      Perdagangan menjadi salah satu jalur penting dalam proses tersebut.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card" onclick="openModal('Perdagangan','Pedagang dari India dan wilayah lain datang ke Nusantara untuk melakukan aktivitas perdagangan. Melalui interaksi tersebut, terjadi pertukaran budaya, bahasa, kepercayaan, dan pengetahuan.')">
+      <div class="card-icon"><i class="fa-solid fa-ship"></i></div>
+      <h3>Jalur Perdagangan</h3>
+      <p>Interaksi pedagang asing dan masyarakat lokal membawa pertukaran budaya.</p>
+      <span class="card-more">Pelajari detail <i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+
+    <div class="card" onclick="openModal('Peran Brahmana','Brahmana merupakan kelompok pendeta dalam tradisi Hindu. Mereka memiliki pengetahuan mengenai kitab suci dan upacara keagamaan yang berperan dalam penyebaran ajaran Hindu.')">
+      <div class="card-icon"><i class="fa-solid fa-book"></i></div>
+      <h3>Peran Brahmana</h3>
+      <p>Para pendeta memiliki peran dalam penyebaran ajaran dan tradisi Hindu.</p>
+      <span class="card-more">Pelajari detail <i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+
+    <div class="card" onclick="openModal('Peran Masyarakat Nusantara','Masyarakat Nusantara tidak hanya menerima pengaruh luar, tetapi juga mengolahnya sesuai kebudayaan lokal. Proses ini menghasilkan bentuk kebudayaan yang memiliki ciri khas tersendiri.')">
+      <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+      <h3>Peran Masyarakat Lokal</h3>
+      <p>Masyarakat Nusantara berperan aktif dalam menerima dan mengembangkan budaya.</p>
+      <span class="card-more">Pelajari detail <i class="fa-solid fa-arrow-right"></i></span>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    <h3><i class="fa-solid fa-lightbulb"></i> Tahukah Kamu?</h3>
+    <p>
+      Masuknya pengaruh Hindu-Buddha bukan berarti kebudayaan lokal
+      menghilang. Masyarakat Nusantara justru menggabungkan berbagai
+      unsur budaya sehingga menghasilkan kebudayaan yang khas.
+    </p>
+  </div>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide">
+  <div class="section-head">
+    <div class="eyebrow"><i class="fa-solid fa-route"></i> BAGIAN 02</div>
+    <h2>Teori Masuknya Hindu-Buddha</h2>
+    <p>
+      Ada beberapa teori yang menjelaskan proses masuknya pengaruh
+      Hindu-Buddha ke Nusantara. Setiap teori memiliki penjelasan
+      mengenai kelompok yang berperan dalam proses tersebut.
+    </p>
+  </div>
+
+  <div class="cards">
+    <div class="card" onclick="openModal('Teori Brahmana','Teori Brahmana menyatakan bahwa kaum Brahmana berperan membawa ajaran Hindu ke Nusantara. Mereka dianggap memiliki kemampuan memahami kitab suci dan memimpin upacara keagamaan.')">
+      <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
+      <h3>Teori Brahmana</h3>
+      <p>Penyebaran dilakukan oleh kaum Brahmana atau pendeta.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+
+    <div class="card" onclick="openModal('Teori Ksatria','Teori Ksatria mengaitkan masuknya pengaruh Hindu dengan kedatangan kelompok bangsawan atau prajurit dari India yang diperkirakan memiliki hubungan dengan pembentukan kekuasaan di Nusantara.')">
+      <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <h3>Teori Ksatria</h3>
+      <p>Melibatkan kelompok bangsawan dan prajurit.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+
+    <div class="card" onclick="openModal('Teori Waisya','Teori Waisya menjelaskan bahwa para pedagang berperan dalam membawa pengaruh Hindu-Buddha melalui hubungan dagang dan interaksi dengan masyarakat setempat.')">
+      <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+      <h3>Teori Waisya</h3>
+      <p>Pedagang menjadi salah satu jalur penyebaran budaya.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+
+    <div class="card" onclick="openModal('Teori Sudra','Teori Sudra menyebutkan kemungkinan kedatangan kelompok Sudra ke Nusantara dan ikut membawa pengaruh kebudayaan India. Teori ini memiliki keterbatasan dalam menjelaskan penyebaran ajaran secara luas.')">
+      <div class="card-icon"><i class="fa-solid fa-people-group"></i></div>
+      <h3>Teori Sudra</h3>
+      <p>Menjelaskan kemungkinan perpindahan kelompok masyarakat.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+
+    <div class="card" onclick="openModal('Teori Arus Balik','Teori Arus Balik menjelaskan bahwa masyarakat Nusantara juga aktif belajar ke India, kemudian kembali dan menyebarkan pengetahuan serta ajaran yang telah dipelajari.')">
+      <div class="card-icon"><i class="fa-solid fa-rotate"></i></div>
+      <h3>Teori Arus Balik</h3>
+      <p>Masyarakat Nusantara belajar ke luar lalu kembali ke daerah asal.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+
+    <div class="card" onclick="openModal('Kesimpulan Teori','Berbagai teori tersebut merupakan penjelasan yang dikemukakan para ahli. Tidak semua teori memiliki bukti dan tingkat dukungan yang sama. Proses penyebaran kemungkinan berlangsung melalui berbagai jalur.')">
+      <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <h3>Kesimpulan</h3>
+      <p>Proses penyebaran dapat melibatkan berbagai kelompok dan jalur.</p>
+      <span class="card-more">Baca selengkapnya</span>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide">
+  <div class="section-head">
+    <div class="eyebrow"><i class="fa-solid fa-landmark"></i> BAGIAN 03</div>
+    <h2>Kerajaan Hindu-Buddha</h2>
+    <p>
+      Pengaruh Hindu-Buddha berkembang dalam berbagai kerajaan
+      di Nusantara. Kerajaan tersebut memiliki peran penting
+      dalam bidang politik, perdagangan, agama, dan kebudayaan.
+    </p>
+  </div>
+
+  <div class="kingdom-grid">
+    <div class="kingdom" onclick="openModal('Kerajaan Kutai','Kutai merupakan salah satu kerajaan Hindu tertua yang diketahui di Nusantara. Kerajaan ini berkembang di wilayah Kalimantan Timur. Prasasti Yupa menjadi sumber sejarah penting yang menyebut Raja Mulawarman.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-crown"></i></div>
+      <div>
+        <h3>Kutai</h3>
+        <p>Kalimantan Timur. Dikenal melalui peninggalan prasasti Yupa dan Raja Mulawarman.</p>
+      </div>
+    </div>
+
+    <div class="kingdom" onclick="openModal('Kerajaan Tarumanegara','Tarumanegara berkembang di wilayah Jawa Barat. Kerajaan ini dikenal melalui beberapa prasasti, termasuk Prasasti Ciaruteun yang berkaitan dengan Raja Purnawarman.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-landmark"></i></div>
+      <div>
+        <h3>Tarumanegara</h3>
+        <p>Jawa Barat. Dikenal dengan prasasti peninggalan Raja Purnawarman.</p>
+      </div>
+    </div>
+
+    <div class="kingdom" onclick="openModal('Kerajaan Sriwijaya','Sriwijaya merupakan kerajaan bercorak Buddha yang berkembang di Sumatra. Kerajaan ini memiliki pengaruh besar dalam perdagangan maritim dan menjadi pusat pembelajaran agama Buddha.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-water"></i></div>
+      <div>
+        <h3>Sriwijaya</h3>
+        <p>Sumatra. Kerajaan maritim dan pusat pembelajaran agama Buddha.</p>
+      </div>
+    </div>
+
+    <div class="kingdom" onclick="openModal('Kerajaan Mataram Kuno','Mataram Kuno berkembang di Jawa Tengah dan kemudian memiliki perkembangan di Jawa Timur. Kerajaan ini meninggalkan berbagai candi, termasuk kompleks Borobudur dan Prambanan yang dibangun pada masa dinasti berbeda.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-torii-gate"></i></div>
+      <div>
+        <h3>Mataram Kuno</h3>
+        <p>Jawa. Berkaitan dengan perkembangan candi Buddha dan Hindu.</p>
+      </div>
+    </div>
+
+    <div class="kingdom" onclick="openModal('Kerajaan Singasari','Singasari berkembang di Jawa Timur. Kerajaan ini didirikan oleh Ken Arok dan mencapai perkembangan penting pada masa pemerintahan Kertanegara.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-chess-rook"></i></div>
+      <div>
+        <h3>Singasari</h3>
+        <p>Jawa Timur. Dikenal dengan tokoh Ken Arok dan Kertanegara.</p>
+      </div>
+    </div>
+
+    <div class="kingdom" onclick="openModal('Kerajaan Majapahit','Majapahit merupakan salah satu kerajaan besar dalam sejarah Nusantara. Kerajaan ini didirikan oleh Raden Wijaya pada 1293. Masa kejayaannya sering dikaitkan dengan pemerintahan Hayam Wuruk dan peran Mahapatih Gajah Mada.')">
+      <div class="kingdom-icon"><i class="fa-solid fa-monument"></i></div>
+      <div>
+        <h3>Majapahit</h3>
+        <p>Jawa Timur. Mencapai masa kejayaan pada masa Hayam Wuruk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5 -->
+<section class="slide">
+  <div class="section-head">
+    <div class="eyebrow"><i class="fa-solid fa-clock-rotate-left"></i> BAGIAN 04</div>
+    <h2>Perkembangan dan Peninggalan</h2>
+    <p>
+      Pengaruh Hindu-Buddha meninggalkan jejak dalam kehidupan
+      masyarakat Nusantara, mulai dari bangunan, seni, sastra,
+      hingga sistem pemerintahan.
+    </p>
+  </div>
+
+  <div class="content-grid">
+    <div class="info-box">
+      <h3>Warisan Kebudayaan</h3>
+      <p>
+        Kebudayaan Hindu-Buddha berkembang dan berakulturasi
+        dengan tradisi lokal. Hasilnya dapat dilihat dalam
+        berbagai peninggalan sejarah yang masih dapat dipelajari.
+      </p>
+
+      <div class="info-list">
+        <div class="info-item">
+          <i class="fa-solid fa-check-circle"></i>
+          <span>Arsitektur candi dan bangunan keagamaan.</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-check-circle"></i>
+          <span>Prasasti sebagai sumber informasi sejarah.</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-check-circle"></i>
+          <span>Seni relief, patung, dan kesusastraan.</span>
+        </div>
+        <div class="info-item">
+          <i class="fa-solid fa-check-circle"></i>
+          <span>Pengaruh dalam bahasa, istilah, dan tradisi.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="visual-box">
+      <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=900" alt="Bangunan bersejarah">
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="time-item">
+      <div class="time-dot"></div>
+      <div class="time-card">
+        <strong>ABAD KE-4 M</strong>
+        <h3>Kutai</h3>
+        <p>Prasasti Yupa menjadi bukti penting perkembangan kerajaan Hindu.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-dot"></div>
+      <div class="time-card">
+        <strong>ABAD KE-7 M</strong>
+        <h3>Sriwijaya</h3>
+        <p>Pengaruh kerajaan maritim Buddha berkembang di Sumatra.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-dot"></div>
+      <div class="time-card">
+        <strong>ABAD KE-8–9 M</strong>
+        <h3>Mataram Kuno</h3>
+        <p>Perkembangan bangunan monumental seperti Borobudur dan Prambanan.</p>
+      </div>
+    </div>
+
+    <div class="time-item">
+      <div class="time-dot"></div>
+      <div class="time-card">
+        <strong>ABAD KE-13–15 M</strong>
+        <h3>Majapahit</h3>
+        <p>Kerajaan besar dengan pengaruh luas dalam sejarah Nusantara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 6 -->
+<section class="slide">
+  <div class="conclusion">
+    <div class="conclusion-icon">
+      <i class="fa-solid fa-graduation-cap"></i>
+    </div>
+    <div class="eyebrow">PENUTUP PRESENTASI</div>
+    <h2>Kesimpulan</h2>
+    <p>
+      Masuk dan berkembangnya pengaruh Hindu-Buddha membawa
+      perubahan besar dalam sejarah Nusantara. Melalui perdagangan,
+      interaksi budaya, dan peran masyarakat lokal, lahirlah
+      berbagai kerajaan serta peninggalan bersejarah.
+      Pengaruh tersebut menjadi bagian penting dari kekayaan
+      kebudayaan Indonesia hingga saat ini.
+    </p>
+    <button class="primary-btn" onclick="goTo(0)">
+      <i class="fa-solid fa-rotate-left"></i> Ulangi Presentasi
+    </button>
+  </div>
+
+  <div class="quote-box">
+    <h3>Terima Kasih</h3>
+    <p>
+      Sejarah bukan hanya tentang masa lalu, tetapi juga tentang
+      memahami perjalanan dan identitas bangsa.
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="bottom-nav">
+  <div class="nav-info">
+    SLIDE <strong id="current">01</strong> / <span id="total">06</span>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="nav-btn" id="prev" onclick="changeSlide(-1)">
+      <i class="fa-solid fa-arrow-left"></i> Sebelumnya
+    </button>
+    <button class="nav-btn next" id="next" onclick="changeSlide(1)">
+      Selanjutnya <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</footer>
+
+<div class="modal" id="modal" onclick="closeOutside(event)">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="modal-tag">INFORMASI SEJARAH</div>
+    <h3 id="modalTitle">Judul</h3>
+    <p id="modalText">Deskripsi materi.</p>
+  </div>
+</div>
+
+<script>
+(function() {
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  const current = document.getElementById('current');
+  const total = document.getElementById('total');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+
+  let index = 0;
+
+  total.textContent = String(slides.length).padStart(2,'0');
+
+  function showSlide(number) {
+    index = Math.max(0,Math.min(number,slides.length - 1));
+
+    slides.forEach((slide,i) => {
+      slide.classList.toggle('active',i === index);
+    });
+
+    current.textContent = String(index + 1).padStart(2,'0');
+    progress.style.width = ((index + 1) / slides.length * 100) + '%';
+
+    prev.disabled = index === 0;
+    next.disabled = index === slides.length - 1;
+
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  window.goTo = function(number) {
+    showSlide(number);
+  };
+
+  window.changeSlide = function(direction) {
+    showSlide(index + direction);
+  };
+
+  window.openModal = function(title,text) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalText').textContent = text;
+    document.getElementById('modal').classList.add('show');
+  };
+
+  window.closeModal = function() {
+    document.getElementById('modal').classList.remove('show');
+  };
+
+  window.closeOutside = function(event) {
+    if(event.target.id === 'modal') {
+      closeModal();
+    }
+  };
+
+  window.toggleFullscreen = function() {
+    if(!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.();
+    } else {
+      document.exitFullscreen?.();
+    }
+  };
+
+  document.addEventListener('keydown',function(event) {
+    if(event.key === 'ArrowRight') changeSlide(1);
+    if(event.key === 'ArrowLeft') changeSlide(-1);
+    if(event.key === 'Escape') closeModal();
+  });
+
+  showSlide(0);
+})();
+</script>
+
+</body>
+</html>
